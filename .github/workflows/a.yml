@@ -15,8 +15,9 @@ jobs:
             
             - name: ls
               run: ls -al
-              
-            - name: use B
-              uses: ././github/workflows/b.yml
-            #   secrets: inherit
+
+    runB:
+        name: Run B
+        uses: ./.github/workflows/b.yml
+        secrets: inherit
 
