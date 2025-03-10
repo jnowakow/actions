@@ -19,5 +19,5 @@ jobs:
     runB:
         name: Run B
         uses: ./.github/workflows/b.yml
-        # secrets: inherit
+        secrets: inherit
 

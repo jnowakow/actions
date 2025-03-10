@@ -11,6 +11,9 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v4
 
+            - name: Print context
+              run: echo "${{github}}"
+
             - name: Print if called
               if: github.event_name == 'workflow_called'
               run: echo "Workflow called - ${{ github.event_name }}"
