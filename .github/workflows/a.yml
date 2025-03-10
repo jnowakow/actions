@@ -20,4 +20,6 @@ jobs:
         name: Run B
         uses: ./.github/workflows/b.yml
         secrets: inherit
+        with:
+            VAL: "HIHIHI"
 
