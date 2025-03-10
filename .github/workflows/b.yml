@@ -1,0 +1,18 @@
+name: Workflow B
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+    job:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Print if called
+              if: github.event_name == 'workflow_called'
+              run: Echo "Workflow called - ${{ github.event_name }}"
+            
+            - name: Print if dispatched
+              if: github.event_name == 'workflow_dispatch'
+              run: Echo "Workflow dispatched - ${{ github.event_name }}"
+            
