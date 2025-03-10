@@ -15,7 +15,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            prinln(JSON.stringify(${{ github }}))
+            println(JSON.stringify(${{ github }}))
 
       - name: Print if called
         if: github.event_name == 'workflow_called'
