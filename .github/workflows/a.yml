@@ -9,10 +9,13 @@ jobs:
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-              
+
             - name: say hello
               run: echo "Hello"
             
+            - name: ls
+              run: ls -al
+              
             - name: use B
               uses: ././github/workflows/b.yml
             #   secrets: inherit
