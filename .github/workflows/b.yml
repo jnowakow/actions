@@ -12,7 +12,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Print context
-              run: echo "${{github}}"
+              run: echo "${{fromJson(github)}}"
 
             - name: Print if called
               if: github.event_name == 'workflow_called'
