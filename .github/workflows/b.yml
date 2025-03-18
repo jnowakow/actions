@@ -13,6 +13,10 @@ on:
         description: eee
         default: HEHEHE
         type: string
+      UE:
+        description: ue
+        default: EEEE
+
 
 jobs:
   job:
@@ -25,7 +29,7 @@ jobs:
         run: echo "${{ toJson(github) }}"
 
       - name: Print input
-        run: echo "${{ inputs.VAL || github.event.inputs.VAL }}"
+        run: echo "${{ inputs.VAL || github.event.inputs.VAL }}   - ${{ github.event.inputs.UE }}" 
 
       - name: Print if called
         if: inputs.VAL != ''
