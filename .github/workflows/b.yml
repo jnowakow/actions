@@ -8,6 +8,11 @@ on:
         default: HAHA
         type: string
   workflow_dispatch:
+    inputs:
+      VAL:
+        description: eee
+        default: HEHEHE
+        type: string
 
 jobs:
   job:
@@ -20,7 +25,7 @@ jobs:
         run: echo "${{ toJson(github) }}"
 
       - name: Print input
-        run: echo "${{ inputs.VAL }}"
+        run: echo "${{ inputs.VAL || github.event.inputs.VAL }}"
 
       - name: Print if called
         if: inputs.VAL != ''

@@ -1,25 +1,22 @@
 name: Workflow A
 
 on:
-    workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
-    job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+  job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-            - name: say hello
-              run: echo "Hello"
-            
-            - name: ls
-              run: ls -al
+      - name: say hello
+        run: echo "Hello"
 
-    runB:
-        name: Run B
-        uses: ./.github/workflows/b.yml
-        secrets: inherit
-        with:
-            VAL: "HIHIHI"
+      - name: ls
+        run: ls -al
 
+  runB:
+    name: Run B
+    uses: ./.github/workflows/b.yml
+    secrets: inherit
